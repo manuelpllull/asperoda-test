@@ -1,0 +1,26 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=10a1f585_002Dfd1e_002D4f97_002D95a8_002D2cc5f5a1a870/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FreeSurtidor_ShouldSetIsFreeToTrue #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::PistaServiceTests.FreeSurtidor_ShouldSetIsFreeToTrue&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::PistaServiceTests.FillSurtidor_ShouldReturnPrefixValue&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=284e84d8_002Df7bf_002D4d17_002D918d_002D806f3d19c17c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FreeSurtidor_ShouldSetIsFreeToTrue" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::PistaServiceTests.FreeSurtidor_ShouldSetIsFreeToTrue&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::PistaServiceTests.FillSurtidor_ShouldReturnPrefixValue&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ec191b54_002D832d_002D4fc4_002Dbc75_002D1078b3657751/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestFillSurtidor" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;And&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::PistaServiceTests.FreeSurtidor_ShouldSetIsFreeToTrue&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::PistaServiceTests.FillSurtidor_ShouldReturnPrefixValue&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;Not&gt;&#xD;
+      &lt;TestAncestor&gt;&#xD;
+        &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::PistaServiceTests.FillSurtidor_ShouldReturnPrefixValue&lt;/TestId&gt;&#xD;
+      &lt;/TestAncestor&gt;&#xD;
+    &lt;/Not&gt;&#xD;
+  &lt;/And&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

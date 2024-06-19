@@ -3,6 +3,7 @@ using Asperoda.Entities;
 using Asperoda.Services;
 using Asperoda.Repositories;
 using System.Linq;
+using NUnit.Framework.Legacy;
 
 [TestFixture]
 public class PistaServiceTests
@@ -40,6 +41,32 @@ public class PistaServiceTests
         _pistaService.FreeSurtidor(surtidor.Id);
 
         // Assert
-        Assert.IsTrue(surtidor.IsFree);
+        Assert.That(surtidor.IsFree);
+    }
+    
+    [Test]
+    public void FillSurtidor_ShouldReturnPrefixValue()
+    {
+        // Arrange
+        var surtidor = _repository.GetAllSurtidors().FirstOrDefault();
+        if (surtidor == null)
+        {
+            Assert.Fail("No surtidor found in the repository.");
+        }
+
+        // Set a random prefix and free the surtidor\
+        surtidor.Free();
+        surtidor.Prefix(new Random().Next(10, 100));
+        
+        Console.WriteLine(surtidor.MaxFillPrice);
+
+        var expectedTotal = surtidor.MaxFillPrice;
+        var cancellationToken = new CancellationToken();
+
+        // Act
+        var actualTotal = surtidor.Fill(cancellationToken);
+
+        // Assert
+        ClassicAssert.AreEqual(expectedTotal, (int) actualTotal);
     }
 }

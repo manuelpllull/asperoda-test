@@ -1,9 +1,9 @@
-﻿namespace Asperoda.Repository;
+﻿using Asperoda.Entities;
+
+namespace Asperoda.Interfaces;
 
 public interface ISurtidorRepository
 {
-    void FreeSurtidor(Guid id);
-    bool GetSurtidorStatus(Guid id);
-    int? GetSurtidorMaxFill(Guid id);
-    double FillSurtidor(Guid id, CancellationToken cancellationToken);
+    ISurtidor? GetSurtidorById(Guid id);
+    IEnumerable<ISurtidor> GetAllSurtidors();
 }
