@@ -33,22 +33,29 @@ public class Surtidor : ISurtidor
         MaxFillPrice = max;
     }
 
-    public double Fill(CancellationToken cancellationToken)
+    public async Task<int> FillAsync(CancellationToken cancellationToken)
     {
         if (!IsFree)
         {
-            return Price;
+            Price = 0;
+            return 0;
         }
         
         IsFree = false;
-
-        while (!cancellationToken.IsCancellationRequested && MaxFillPrice.HasValue && Price <= MaxFillPrice.Value)
+        var iterationsCounter = 0;
+        while (MaxFillPrice.HasValue && Price <= MaxFillPrice.Value)
         {
+            if(cancellationToken.IsCancellationRequested)
+            {
+                IsFree = true;
+                return iterationsCounter;
+            }
             Price += 0.1;
-            Thread.Sleep(1);
+            iterationsCounter++;
+            await Task.Delay(1);
         }
         
         IsFree = true;
-        return Price;
+        return iterationsCounter;
     }
 }

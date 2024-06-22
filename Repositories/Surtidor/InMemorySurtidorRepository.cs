@@ -1,7 +1,6 @@
 ﻿using Asperoda.Entities;
-using Asperoda.Interfaces;
 
-namespace Asperoda.Repositories;
+namespace Asperoda.Repositories.Surtidor;
 
 public class InMemorySurtidorRepository(IEnumerable<ISurtidor> surtidores) : ISurtidorRepository
 {

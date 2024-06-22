@@ -1,6 +1,6 @@
 ﻿using Asperoda.Entities;
 
-namespace Asperoda.Interfaces;
+namespace Asperoda.Repositories.Surtidor;
 
 public interface ISurtidorRepository
 {
