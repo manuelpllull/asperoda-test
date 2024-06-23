@@ -44,6 +44,20 @@ public class PistaServiceTests
         // Assert
         Assert.That(surtidor.IsFree);
     }
+    
+    [Test]
+    public void FreeSurtidor_ShouldSetIsFreeToFalse()
+    {
+        // Arrange
+        var surtidor = _repository.GetAllSurtidors().First();
+        _pistaService.FreeSurtidor(surtidor.Id);
+
+        // Act
+        _pistaService.BlockSurtidor(surtidor.Id);
+
+        // Assert
+        Assert.That(!surtidor.IsFree);
+    }
 
     [Test]
     public async Task FillSurtidor_ShouldReturnPrefixValue()
@@ -57,8 +71,8 @@ public class PistaServiceTests
         }
 
         // Set a random prefix (can be a typical amount to fill the tank) and free the surtidor\
-        surtidor.Free();
-        surtidor.Prefix(new Random().Next(1, 100));
+        _pistaService.FreeSurtidor(surtidor.Id);
+        _pistaService.PrefixSurtidor(surtidor.Id, new Random().Next(10, 100));
 
         Console.WriteLine(surtidor.MaxFillPrice);
 
@@ -66,7 +80,7 @@ public class PistaServiceTests
         var cancellationToken = new CancellationToken();
 
         // Act
-        await surtidor.FillAsync(cancellationToken);
+        await _pistaService.FillSurtidorAsync(surtidor.Id, cancellationToken);
 
         // Assert
         Assert.That(expectedTotal, Is.EqualTo(Math.Round(surtidor.Price)));
@@ -84,21 +98,21 @@ public class PistaServiceTests
         }
 
         // Set a random prefix and block the surtidor
-        surtidor.Prefix(new Random().Next(10, 100));
-        surtidor.Block();
+        _pistaService.PrefixSurtidor(surtidor.Id,new Random().Next(10, 100));
+        _pistaService.BlockSurtidor(surtidor.Id);
 
         var expectedTotal = 0;
         var cancellationToken = new CancellationToken();
 
         // Act
-        var actualTotal = await surtidor.FillAsync(cancellationToken);
+        var actualTotal = await _pistaService.FillSurtidorAsync(surtidor.Id, cancellationToken);
 
         // Assert
         Assert.That(expectedTotal, Is.EqualTo(0));
     }
 
     [Test]
-    public async Task FillSurtidor_ShouldStopAtExpectedIterationsOnCancellation()
+    public async Task FillSurtidor_ShouldStopAtExpectedValueOnCancellation()
     {
         // Arrange
         var surtidor = _repository.GetAllSurtidors().FirstOrDefault();
