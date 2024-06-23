@@ -43,7 +43,7 @@ public class PistaService(ISurtidorRepository repository) : IPistaService
         surtidor.Prefix(max);
     }
 
-    public async Task<double> FillSurtidorAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<int> FillSurtidorAsync(Guid id, CancellationToken cancellationToken)
     {
         var surtidor = _repository.GetSurtidorById(id);
         

@@ -11,5 +11,5 @@ public interface ISurtidor
        bool Free();
        bool Block();
        void Prefix(int max);
-       Task<int > FillAsync(CancellationToken cancellationToken);
+       Task<int> FillAsync(CancellationToken cancellationToken);
 }
