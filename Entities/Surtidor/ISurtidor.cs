@@ -1,10 +1,10 @@
-﻿namespace Asperoda.Entities;
+﻿namespace Asperoda.Entities.Surtidor;
 
 public interface ISurtidor
 {
        Guid Id { get; }
        bool IsFree { get; }
-       int? MaxFillPrice { get; }
+       int MaxFillPrice { get; }
        double Price { get; }
        
 

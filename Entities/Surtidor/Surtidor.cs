@@ -1,17 +1,17 @@
-﻿namespace Asperoda.Entities;
+﻿namespace Asperoda.Entities.Surtidor;
 
 public class Surtidor : ISurtidor
 {
     public Guid Id { get; }
     public bool IsFree { get; private set; }
-    public int? MaxFillPrice { get; private set; }
+    public int MaxFillPrice { get; private set; }
     public double Price { get; private set; }
 
     public Surtidor(Guid id)
     {
         Id = id;
         IsFree = true;
-        MaxFillPrice = null;
+        MaxFillPrice = 0;
         Price = 0;
     }
     
@@ -43,7 +43,7 @@ public class Surtidor : ISurtidor
         
         IsFree = false;
         var iterationsCounter = 0;
-        while (MaxFillPrice.HasValue && Price <= MaxFillPrice.Value)
+        while (MaxFillPrice != 0 && Price <= MaxFillPrice)
         {
             if(cancellationToken.IsCancellationRequested)
             {

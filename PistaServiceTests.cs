@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Asperoda.Entities;
+﻿using Asperoda.Entities.Surtidor;
 using Asperoda.Repositories.Surtidor;
 using Asperoda.Services;
 using NUnit.Framework;
@@ -105,7 +104,7 @@ public class PistaServiceTests
         var cancellationToken = new CancellationToken();
 
         // Act
-        var actualTotal = await _pistaService.FillSurtidorAsync(surtidor.Id, cancellationToken);
+        await _pistaService.FillSurtidorAsync(surtidor.Id, cancellationToken);
 
         // Assert
         Assert.That(expectedTotal, Is.EqualTo(0));
@@ -133,7 +132,7 @@ public class PistaServiceTests
         var cancellationTokenSource = new CancellationTokenSource();
 
         // Act
-        var fillTask = surtidor.FillAsync(cancellationTokenSource.Token);
+        var fillTask = _pistaService.FillSurtidorAsync(surtidor.Id, cancellationTokenSource.Token);
         var delayTask = Task.Delay(delay, cancellationTokenSource.Token);
 
         var completedTask = await Task.WhenAny(fillTask, delayTask);
@@ -153,7 +152,17 @@ public class PistaServiceTests
             expectedValue = prefix;
         }
 
+        var lastSuministro = _pistaService.GetHistorial()
+            .Where(s => s.SurtidorId == surtidor.Id)
+            .OrderByDescending(s => s.DateTime)
+            .FirstOrDefault();
+        
+        if (lastSuministro == null)
+        {
+            Assert.Fail("No suministro found in the historial.");
+            return;
+        }
         // Assert
-        Assert.That(expectedValue, Is.EqualTo(surtidor.Price).Within(0.09));
+        Assert.That(expectedValue, Is.EqualTo(lastSuministro.Price).Within(0.09));
     }
 }

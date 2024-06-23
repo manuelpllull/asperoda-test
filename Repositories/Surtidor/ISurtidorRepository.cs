@@ -1,4 +1,4 @@
-﻿using Asperoda.Entities;
+﻿using Asperoda.Entities.Surtidor;
 
 namespace Asperoda.Repositories.Surtidor;
 

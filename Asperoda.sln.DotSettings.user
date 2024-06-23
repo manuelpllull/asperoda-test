@@ -12,11 +12,22 @@
     &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::PistaServiceTests.FillSurtidor_ShouldStopAtExpectedValueOnCancellation&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ec191b54_002D832d_002D4fc4_002Dbc75_002D1078b3657751/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestFillSurtidor" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=56511c9e_002Dc934_002D4616_002D8ab4_002D5ba35d3dbf77/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FillSurtidor_ShouldStopAtExpectedValueOnCancellation" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::Asperoda.PistaServiceTests.FillSurtidor_ShouldStopAtExpectedValueOnCancellation&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=db621b12_002Ddc21_002D4f71_002D86e4_002D467cf017d54c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FillSurtidor_ShouldStopAtExpectedValueOnCancellation #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::Asperoda.PistaServiceTests.FillSurtidor_ShouldStopAtExpectedValueOnCancellation&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ec191b54_002D832d_002D4fc4_002Dbc75_002D1078b3657751/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestFillSurtidor" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::Asperoda.PistaServiceTests.FillSurtidor_ShouldReturnPrefixValue&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::Asperoda.PistaServiceTests.FillSurtidor_ShouldReturnZeroIfSurtidorIsBlocked&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::Asperoda.PistaServiceTests.FillSurtidor_ShouldStopAtExpectedValueOnCancellation&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::Asperoda.PistaServiceTests.FillSurtidor_ShouldStopAtExpectedIterationsOnCancellation&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::FFD451E8-E8E4-488A-B06F-F46B3B8E9BDC::net8.0::Asperoda.PistaServiceTests.FreeSurtidor_ShouldSetIsFreeToFalse&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
