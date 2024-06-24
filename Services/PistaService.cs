@@ -59,12 +59,12 @@ public class PistaService(ISurtidorRepository repository) : IPistaService
         if (cancellationToken.IsCancellationRequested)
         {
             _historial.Add(new Suministro(surtidor.Id, surtidor.Price, surtidor.MaxFillPrice));
-            this.FreeSurtidor(surtidor.Id);
+            this.BlockSurtidor(surtidor.Id);
             return iterations;
         }
         
         _historial.Add(new Suministro(surtidor.Id, surtidor.Price, surtidor.MaxFillPrice));
-        this.FreeSurtidor(surtidor.Id);
+        this.BlockSurtidor(surtidor.Id);
         return await surtidor.FillAsync(cancellationToken);
     }
 
